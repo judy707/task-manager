@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "text": "Learn Docker",
+    "done": false
+  },
+  {
+    "id": 2,
+    "text": "Practice Git",
+    "done": false
+  },
+  {
+    "id": 3,
+    "text": "Build Task Manager",
+    "done": false
+  }
+]
