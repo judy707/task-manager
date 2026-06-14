@@ -3,6 +3,7 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 const command = args[0];
 const taskText = args[1];
+const filter = args[1];
 
 const tasksFile = 'tasks.json';
 
@@ -25,11 +26,18 @@ function addTask(text) {
   console.log(`✅ Task added: "${text}"`);
 }
 
-// List all tasks
-function listTasks() {
-  const tasks = loadTasks();
+// List all tasks (with optional filter)
+function listTasks(filter) {
+  let tasks = loadTasks();
+
+  if (filter === '--done') {
+    tasks = tasks.filter(task => task.done);
+  } else if (filter === '--pending') {
+    tasks = tasks.filter(task => !task.done);
+  }
+
   if (tasks.length === 0) {
-    console.log('No tasks yet!');
+    console.log('No tasks found!');
     return;
   }
   tasks.forEach(task => {
@@ -41,7 +49,7 @@ function listTasks() {
 if (command === 'add') {
   addTask(taskText);
 } else if (command === 'list') {
-  listTasks();
+  listTasks(filter);
 } else {
-  console.log('Usage: node index.js add "task text"  OR  node index.js list');
+  console.log('Usage: node index.js add "task text"  OR  node index.js list [--done|--pending]');
 }
