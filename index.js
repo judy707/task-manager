@@ -26,6 +26,19 @@ function addTask(text) {
   console.log(`✅ Task added: "${text}"`);
 }
 
+// Mark a task as done
+function completeTask(id) {
+  const tasks = loadTasks();
+  const task = tasks.find(task => task.id === parseInt(id));
+  if (!task) {
+    console.log(`Task ${id} not found!`);
+    return;
+  }
+  task.done = true;
+  saveTasks(tasks);
+  console.log(`✅ Task ${id} marked as done: "${task.text}"`);
+}
+
 // List all tasks (with optional filter)
 function listTasks(filter) {
   let tasks = loadTasks();
@@ -48,8 +61,10 @@ function listTasks(filter) {
 // Run the right function based on command
 if (command === 'add') {
   addTask(taskText);
+} else if (command === 'complete') {
+  completeTask(args[1]);
 } else if (command === 'list') {
   listTasks(filter);
 } else {
-  console.log('Usage: node index.js add "task text"  OR  node index.js list [--done|--pending]');
+  console.log('Usage: node index.js add "task" | list [--done|--pending] | complete <id>');
 }
