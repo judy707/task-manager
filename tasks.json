@@ -13,40 +13,5 @@
     "id": 3,
     "text": "Build Task Manager",
     "done": false
-  },
-  {
-    "id": 4,
-    "text": "download docker",
-    "done": false
-  },
-  {
-    "id": 5,
-    "text": "Learn Docker",
-    "done": false
-  },
-  {
-    "id": 6,
-    "text": "Practice Git",
-    "done": false
-  },
-  {
-    "id": 7,
-    "text": "Build Task Manager",
-    "done": false
-  },
-  {
-    "id": 8,
-    "text": "Learn Docker",
-    "done": false
-  },
-  {
-    "id": 9,
-    "text": "Practice Git",
-    "done": false
-  },
-  {
-    "id": 10,
-    "text": "Build Task Manager",
-    "done": false
   }
 ]

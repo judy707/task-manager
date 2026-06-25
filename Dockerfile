@@ -1,10 +1,8 @@
-FROM node:24
-
+FROM node:20-alpine
 WORKDIR /app
-
 COPY package*.json ./
+COPY prisma ./prisma
 RUN npm install
-
 COPY . .
-
-CMD ["node", "index.js", "list"]
+EXPOSE 3000
+CMD ["node", "server.js"]

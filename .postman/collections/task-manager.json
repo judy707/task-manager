@@ -1,0 +1,29 @@
+{
+  "info": {
+    "name": "Task Manager API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Tasks",
+      "request": { "method": "GET", "url": "http://localhost:3000/tasks" }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/tasks",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"text\": \"Buy groceries\"}" }
+      }
+    },
+    {
+      "name": "Complete Task",
+      "request": { "method": "PUT", "url": "http://localhost:3000/tasks/1" }
+    },
+    {
+      "name": "Delete Task",
+      "request": { "method": "DELETE", "url": "http://localhost:3000/tasks/1" }
+    }
+  ]
+}
